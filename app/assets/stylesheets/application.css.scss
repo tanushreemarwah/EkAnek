@@ -17,3 +17,26 @@
 @import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500); 
 @import 'bootstrap-sprockets'; 
 @import 'bootstrap';
+
+
+
+	.item-title {
+		margin-top: 0;
+		font-size: 2em;
+	}
+
+.btn-custom {
+	margin-top: 10px;
+	color: darken(#f1c40f, 5%);
+	background-color: #fff;
+	border: 1px solid darken(#f1c40f, 5%);
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Ubuntu', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#f1c40f, 5%);
+		color: #fff;
+		transition: 0.5s;
+	}
+}
