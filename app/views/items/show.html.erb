@@ -1,12 +1,17 @@
 	<div class="container">
-		<h2 class="item-title "><%= @item.title %></h2>
-		<p><%= @item.description%></p>
-		<div class="row-4">File Extension is: 
-			<%= @item.avatar.file.extension %></div>
+		<h2 class="item-title">Item Title : <%= @item.title %></h2>
+		<p> Item Description : <%= @item.description%></p>
+		<div class="row-4">
+			<h5>File Extension : <%= @item.avatar.file.extension %></h5>
+		</div>
 			
-			<div class="row-4">File url:	<%= @item.avatar.path %></div>
+			<div class="row-4">
+				<p>File url : <%= @item.avatar.path %></p>
+			</div>
 			
-			<div class="row-4">TinyURL: <%= ShortURL.shorten( @item.avatar.path , :tinyurl) %></div> <br>
+			<div class="row-4">
+				<p>TinyURL : <%= ShortURL.shorten( @item.avatar.path , :tinyurl) %></p>
+			</div> <br>
 
 		<% if user_signed_in? %>
 
