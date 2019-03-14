@@ -1,5 +1,7 @@
 <%= simple_form_for @item do |f| %>
 	<%= f.input :title, label: "Item Title" %>
 	<%= f.input :description, label: "Item Description" %>
+	<%= f.file_field :avatar %>
+
 	<%= f.button :submit %>
 <%end%>

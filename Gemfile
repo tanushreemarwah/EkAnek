@@ -11,6 +11,8 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.2'
+gem 'carrierwave', '~> 1.0'
+gem 'shorturl', '~> 1.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

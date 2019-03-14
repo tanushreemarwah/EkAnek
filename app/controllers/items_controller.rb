@@ -3,13 +3,17 @@ class ItemsController < ApplicationController
 
 
 	def index
-		@items = Item.all.order("created_at DESC")
+		@user=current_user
+		@items = Item.all.order("created_at DESC") 
+
 	end
 	
 	def new
-		# @item =Item.new
-		@item=current_user.items.build
+		@item =Item.new
+		# @item=current_user.items.build
 		@user=current_user
+		# @item.user_id = current_user.id
+
 	end
 
 	def show
@@ -17,12 +21,20 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		@item = current_user.items.build(item_params)
-		# @item = Item.create(
-		# 		title: params[:item][:title],
-		# 		description: params[:item][:description]
-		# 	)
-	
+		# byebug
+		# @item = current_user.items.build(item_params)
+		# @user=current_user
+		@item = Item.create(
+				user_id: current_user.id,
+				title: params[:item][:title],
+				description: params[:item][:description],
+				avatar: params[:item][:avatar]
+			)
+		# @item.avatar = params[:file] 
+		# @item.title = params[:item][:title]
+		# @item.description = params[:item][:description]
+		# @item.avatar = params[:item][:avatar]
+		
 		if @item.save
 			redirect_to root_path
 		else
@@ -49,7 +61,7 @@ class ItemsController < ApplicationController
 
 	private
 		def item_params
-			params.require(:item).permit(:title, :description)
+			params.require(:item).permit(:title, :description, :file)
 		end
 
 		def find_item
