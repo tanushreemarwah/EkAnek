@@ -34,15 +34,21 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %> 
-
-            <li><%= link_to "Add New Item", new_item_path %></li>
-         
+            
+            <li> <%= link_to "Add New Item", new_item_path %> </li>
+                  
           <% end %>
        </ul>
        
       </div>
 
     </nav>
+  <div class="container">
+    <% if user_signed_in? %>
+      You are currently signed in as:  <%= current_user.email %>
+    <%end%>
+  </div>
+
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
